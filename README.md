@@ -1,0 +1,1 @@
+- [ ] Update Jest when new version releases (deprecated packages)
