@@ -2,8 +2,10 @@
   "name": "todo-express-json",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test --watch ./app.test.js",
+    "server": "node --watch ./server.js"
   },
   "keywords": [],
   "author": "",
@@ -11,9 +13,7 @@
   "description": "",
   "dependencies": {
     "ejs": "^3.1.10",
-    "express": "^4.21.0"
-  },
-  "devDependencies": {
-    "jest": "^29.7.0"
+    "express": "^4.21.0",
+    "supertest": "^7.0.0"
   }
 }
