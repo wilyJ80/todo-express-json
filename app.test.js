@@ -22,8 +22,16 @@ describe('GET /new', () => {
 });
 
 describe('POST /new', () => {
-	it('Posts a new message', async () => {
+	it('Posts a new note', async () => {
 		const response = await supertest(app)
 			.post('/new');
+	});
+});
+
+describe('GET /details/:id', () => {
+	it('Retrieves note details', async () => {
+		const response = await supertest(app)
+			.get('/details/0')
+			.expect(200);
 	});
 });

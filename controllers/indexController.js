@@ -13,7 +13,8 @@ export const notes = [
 
 export const links = {
 	index: '/',
-	new: '/new'
+	new: '/new',
+	details: '/details'
 };
 
 /**
@@ -25,4 +26,19 @@ export function getNotes(req, res) {
 		notes: notes,
 		links: links
 	});
+}
+
+/**
+ * @param {import("express").Request} req 
+ * @param {import("express").Response} res
+ */
+export function getNoteDetails(req, res) {
+	const noteId = parseInt(req.params.id, 10);
+	const note = notes.find(note => note.id === noteId);
+
+	if (note) {
+		res.render('details.html', { note });
+	} else {
+		res.status(404).send('Note not found');
+	}
 }
