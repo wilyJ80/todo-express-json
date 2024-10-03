@@ -10,10 +10,10 @@
 
 <body>
 	<h1>Add a new note</h1>
-
-	<form>
+	<form method="post" action="<%= links.new %>">
 		<label for="text">Text:</label>
-		<input type="text" id="text">
+		<input type="text" id="text" name="text">
+		<button>Add Note</button>
 	</form>
 
 </body>

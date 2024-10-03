@@ -1,6 +1,7 @@
 import { Router } from "express";
-import { addNewNote } from "../controllers/newNoteController.js";
+import { addNotePage, addNote } from "../controllers/newNoteController.js";
 
 export const newNoteRouter = Router();
 
-newNoteRouter.get('/', addNewNote);
+newNoteRouter.get('/', addNotePage);
+newNoteRouter.post('/', addNote);

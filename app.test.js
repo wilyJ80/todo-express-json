@@ -20,3 +20,10 @@ describe('GET /new', () => {
 			.expect(200);
 	});
 });
+
+describe('POST /new', () => {
+	it('Posts a new message', async () => {
+		const response = await supertest(app)
+			.post('/new');
+	});
+});
