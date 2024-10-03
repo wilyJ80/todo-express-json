@@ -1,4 +1,4 @@
-export const messages = [
+export const notes = [
 	{
 		id: 0,
 		text: "Hello World!",
@@ -11,13 +11,18 @@ export const messages = [
 	}
 ];
 
+export const links = {
+	index: '/',
+	new: '/new'
+};
+
 /**
  * @param {import("express").Request} req 
  * @param {import("express").Response} res
  */
-export function getMessages(req, res) {
+export function getNotes(req, res) {
 	res.render("index.html", {
-		messages: messages
+		notes: notes,
+		links: links
 	});
 }
-

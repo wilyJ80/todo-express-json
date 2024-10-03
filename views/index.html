@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Notes</title>
+	<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<h1>Note Index</h1>
+	<a href="<%= links.new %>">Add a new note</a>
+
+	<% notes.forEach((note)=> { %>
+		<ul>
+			<li>
+				<%= note.text %>
+			</li>
+			<li>
+				<%= note.added %>
+			</li>
+		</ul>
+		<% }); %>
+
+</body>
+
+</html>

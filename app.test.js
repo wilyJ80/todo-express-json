@@ -4,17 +4,19 @@ import supertest from "supertest";
 import { app } from "./app.js";
 
 describe('GET /', () => {
-	it('Responds with 200 OK', async () => {
+	it('Returns index page', async () => {
 		const response = await supertest(app)
 			.get('/')
+			.expect('Content-Type', 'text/html; charset=utf-8')
 			.expect(200);
 	});
 });
 
 describe('GET /new', () => {
-	it('Responds with 200 OK', async () => {
+	it('Returns new message page', async () => {
 		const response = await supertest(app)
 			.get('/new')
+			.expect('Content-Type', 'text/html; charset=utf-8')
 			.expect(200);
 	});
 });
