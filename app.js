@@ -7,7 +7,10 @@ export const app = express();
 app.set('view engine', 'ejs');
 app.engine('html', ejs.renderFile);
 
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/', indexRouter);
 app.use('/new', newNoteRouter);
+
+// Add special 404 handling...

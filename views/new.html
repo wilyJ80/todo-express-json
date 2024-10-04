@@ -4,15 +4,17 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-	<link href="css/style.css" rel="stylesheet">
+	<title>Add new note</title>
+	<link href="./style.css" rel="stylesheet">
 </head>
 
 <body>
 	<h1>Add a new note</h1>
+	<a href="<%= links.index %>">Back to index</a>
+
 	<form method="post" action="<%= links.new %>">
 		<label for="text">Text:</label>
-		<input type="text" id="text" name="text">
+		<textarea id="text" name="text"></textarea>
 		<button>Add Note</button>
 	</form>
 

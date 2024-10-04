@@ -2,12 +2,19 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 export async function loadNotes() {
-	const filePath = path.resolve(import.meta.dirname, '../db/initial-schema.json');
+	const dataFilePath = path.resolve(import.meta.dirname, '../db/data.json');
+	const initialSchemaPath = path.resolve(import.meta.dirname, '../db/initial-schema.json');
 	try {
-		const data = await fs.readFile(filePath);
+		const data = await fs.readFile(dataFilePath);
 		return JSON.parse(data);
-	} catch (error) {
-		console.error(`Error loading initial schema: ${error}`);
+	} catch (schemaError) {
+		console.error(`Error loading initial schema data.json: ${schemaError}, falling back to inital-schema.db`);
+		try {
+			const schemaData = await fs.readFile(initialSchemaPath);
+			return JSON.parse(data);
+		} catch (dataAccessError) {
+			console.error(`Error loading initial schema: ${dataAccessError}`);
+		}
 	}
 }
 
@@ -44,7 +51,7 @@ export function getNoteDetails(req, res) {
 	const note = notes.find(note => note.id === noteId);
 
 	if (note) {
-		res.render('details.html', { note });
+		res.render('details.html', { note, links });
 	} else {
 		res.status(404).send('Note not found');
 	}

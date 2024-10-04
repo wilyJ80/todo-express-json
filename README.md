@@ -6,6 +6,7 @@
 
 # TODO
 
+- [ ] Correct date handling for adding notes
 - [ ] Refactor tests
 - [ ] Add tests for all routes
 - [ ] Add SQLite instead of JSON
