@@ -12,8 +12,7 @@
 	<h1>Add a new note</h1>
 	<a href="<%= links.index %>">Back to index</a>
 
-	<form method="post" action="<%= links.new %>">
-		<label for="text">Text:</label>
+	<form method="post" action="<%= links.new %>" id="add-note">
 		<textarea id="text" name="text"></textarea>
 		<button>Add Note</button>
 	</form>
