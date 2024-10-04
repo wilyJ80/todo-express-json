@@ -1,16 +1,21 @@
-export const notes = [
-	{
-		id: 0,
-		text: "Hello World!",
-		added: new Date()
-	},
-	{
-		id: 1,
-		text: "Second message",
-		added: new Date()
-	}
-];
+import fs from "node:fs/promises";
+import path from "node:path";
 
+export async function loadNotes() {
+	const filePath = path.resolve(import.meta.dirname, '../db/initial-schema.json');
+	try {
+		const data = await fs.readFile(filePath);
+		return JSON.parse(data);
+	} catch (error) {
+		console.error(`Error loading initial schema: ${error}`);
+	}
+}
+
+export const notes = await loadNotes();
+
+/**
+ * Routes for the app.
+ */
 export const links = {
 	index: '/',
 	new: '/new',
@@ -18,6 +23,7 @@ export const links = {
 };
 
 /**
+ * Render page of note list.
  * @param {import("express").Request} req 
  * @param {import("express").Response} res
  */
@@ -29,6 +35,7 @@ export function getNotes(req, res) {
 }
 
 /**
+ * Render note detail page.
  * @param {import("express").Request} req 
  * @param {import("express").Response} res
  */

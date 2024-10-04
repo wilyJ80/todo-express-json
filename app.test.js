@@ -1,5 +1,4 @@
 import { describe, it } from "node:test";
-import assert from "node:assert";
 import supertest from "supertest";
 import { app } from "./app.js";
 
