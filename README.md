@@ -1,3 +1,7 @@
+# Description
+
+- Todo app with JSON persistence using Express + EJS and testing with Supertest + `node:test`
+
 # Running
 
 1. Install dependencies with `npm install`
