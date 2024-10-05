@@ -11,7 +11,7 @@ export async function loadNotes() {
 		console.error(`Error loading initial schema data.json: ${schemaError}, falling back to inital-schema.db`);
 		try {
 			const schemaData = await fs.readFile(initialSchemaPath);
-			return JSON.parse(data);
+			return JSON.parse(schemaData);
 		} catch (dataAccessError) {
 			console.error(`Error loading initial schema: ${dataAccessError}`);
 		}
