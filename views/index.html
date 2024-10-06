@@ -4,12 +4,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#202020">
 	<title>Notes</title>
 	<link href="./style.css" rel="stylesheet">
 </head>
 
 <body>
-	<h1>Note Index</h1>
+	<h1><a href="<%= links.index %>">Public Notes App</a></h1>
 	<a href="<%= links.new %>" id="main-link">+ Add a new note</a>
 
 	<% notes.forEach((note)=> { %>

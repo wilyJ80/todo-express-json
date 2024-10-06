@@ -9,13 +9,14 @@
 </head>
 
 <body>
-	<h1>Add a new note</h1>
-	<a href="<%= links.index %>">Back to index</a>
+	<h1><a href="<%= links.index %>">Public Notes App</a></h1>
+	<a href="<%= links.index %>" id="main-link">
+		<< Back to index</a>
 
-	<form method="post" action="<%= links.new %>" id="add-note">
-		<textarea id="text" name="text"></textarea>
-		<button>Add Note</button>
-	</form>
+			<form method="post" action="<%= links.new %>" id="add-note">
+				<textarea id="text" name="text"></textarea>
+				<button>Add Note</button>
+			</form>
 
 </body>
 
